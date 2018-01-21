@@ -30,7 +30,6 @@ public class RozetkaTests extends WebDriverSettings {
         WebElement smartphoneTarget = driver.findElement(By.xpath(HomeRozetka.SMARTPHONES_BUTTON_LOCALE));
         smartphoneTarget.click();
 
-
         mobileNames = driver.findElements(By.cssSelector(HomeRozetka.MOBILE_LOCATOR));
         /*System.out.println("Количество телефонов: " + mobileNames.size());
         for (WebElement ele: mobileNames) {
@@ -42,7 +41,6 @@ public class RozetkaTests extends WebDriverSettings {
             System.out.println(pri.getText());
         }*/
 
-        //запись данных в коллекцию
         Map<String, String> map = new HashMap<String, String>();
         for (int i = 0; i < mobileNames.size(); i++) {
             map.put(mobileNames.get(i).getText(), mobilePrice.get(i).getText());
@@ -68,7 +66,5 @@ public class RozetkaTests extends WebDriverSettings {
             PreparedStatement stat =con.prepareStatement(insrtSQL);
             stat.executeUpdate();
         }
-
-
     }
 }
